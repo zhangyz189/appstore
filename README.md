@@ -6,8 +6,10 @@
 
 ## 获取应用
 
+```shell
 git clone https://mirror.ghproxy.com/https://github.com/zhangyz189/appstore /tmp/appstore-localApps
 rm -rf /opt/1panel/resource/apps/local/tomcat
 rm -rf /opt/1panel/resource/apps/local/springboot
 cp -rf /tmp/appstore-localApps/* /opt/1panel/resource/apps/local/
 rm -rf /tmp/appstore-localApps
+```
