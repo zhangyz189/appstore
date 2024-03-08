@@ -1,0 +1,18 @@
+version: '3'
+services:
+  tomcat:
+    image: ${IMAGE_NAME}
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    volumes:
+      - ${TOMCAT_WEBAPPS_DIR}:/usr/local/tomcat/webapps
+      - ./logs:/usr/local/tomcat/logs
+    ports:
+      - ${PANEL_APP_PORT_HTTP}:8080
+    labels:
+      createdBy: "Apps"
+networks:
+  1panel-network:
+    external: true

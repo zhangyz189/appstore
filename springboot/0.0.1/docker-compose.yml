@@ -1,0 +1,23 @@
+version: '3'
+services:
+  springboot:
+    image: ${IMAGE_NAME}
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    environment:
+      TZ: Asia/Shanghai
+      SERVER_PORT: ${SPRINGBOOT_SERVER_PORT}
+    entrypoint: /entrypoint.sh
+    networks:
+      - 1panel-network
+    volumes:
+      - ${SPRINGBOOT_JAR_PATH}:/app/app.jar
+      - ./entrypoint.sh:/entrypoint.sh
+      - ./.env:/.env
+    ports:
+      - ${PANEL_APP_PORT_HTTP}:${SPRINGBOOT_SERVER_PORT}
+    labels:
+      createdBy: "Apps"
+networks:
+  1panel-network:
+    external: true

@@ -1,0 +1,50 @@
+additionalProperties:
+  formFields:
+    - default: openjdk:23-jdk-oracle
+      envKey: IMAGE_NAME
+      labelEn: JAVA 版本号
+      labelZh: JAVA version
+      required: true
+      type: select
+      values:
+        - label: openjdk:23-jdk-oracle
+          value: "openjdk:23-jdk-oracle"
+        - label: openjdk:22-jdk-oracle
+          value: "openjdk:22-jdk-oracle"
+        - label: openjdk:17-jdk-oracle
+          value: "openjdk:17-jdk-oracle"
+        - label: openjdk:8-jdk-bullseye
+          value: "openjdk:8-jdk-bullseye"
+    - default: ./app.jar
+      edit: true
+      envKey: SPRINGBOOT_JAR_PATH
+      labelEn: springboot jar path
+      labelZh: springboot应用包地址
+      required: true
+      type: text
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      required: true
+      rule: paramPort
+      type: number
+    - default: 8080
+      edit: true
+      envKey: SPRINGBOOT_SERVER_PORT
+      labelEn: springboot server.port
+      labelZh: springboot应用端口号
+      required: true
+      rule: paramPort
+      type: number
+    - edit: true
+      envKey: JAVA_OPTS
+      labelEn: JVM option
+      labelZh: JVM option
+      type: text
+    - edit: true
+      envKey: SPRINGBOOT_APPLICATION_CONFIG
+      labelEn: springboot config
+      labelZh: springboot环境变量配置
+      type: text

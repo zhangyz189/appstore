@@ -1,0 +1,112 @@
+additionalProperties:
+  formFields:
+    - default: tomcat:8-jdk8
+      envKey: IMAGE_NAME
+      labelEn: Tomcat 版本号
+      labelZh: Tomcat version
+      required: true
+      type: select
+      values:
+        - label: "tomcat:11.0.0"
+          value: "tomcat:11.0.0"
+        - label: "tomcat:11.0.0-jre21"
+          value: "tomcat:11.0.0-jre21"
+        - label: "tomcat:10"
+          value: "tomcat:10"
+        - label: "tomcat:10-jre21"
+          value: "tomcat:10-jre21"
+        - label: "tomcat:10-jdk17"
+          value: "tomcat:10-jdk17"
+        - label: "tomcat:10-jre17"
+          value: "tomcat:10-jre17"
+        - label: "tomcat:10-jdk11"
+          value: "tomcat:10-jdk11"
+        - label: "tomcat:10-jre11"
+          value: "tomcat:10-jre11"
+        - label: "tomcat:9.0"
+          value: "tomcat:9.0"
+        - label: "tomcat:9.0-jre21"
+          value: "tomcat:9.0-jre21"
+        - label: "tomcat:9.0-jdk21-corretto"
+          value: "tomcat:9.0-jdk21-corretto"
+        - label: "tomcat:9.0-jdk17"
+          value: "tomcat:9.0-jdk17"
+        - label: "tomcat:9.0-jre17"
+          value: "tomcat:9.0-jre17"
+        - label: "tomcat:9.0-jdk17-temurin-focal"
+          value: "tomcat:9.0-jdk17-temurin-focal"
+        - label: "tomcat:9.0-jre17-temurin-focal"
+          value: "tomcat:9.0-jre17-temurin-focal"
+        - label: "tomcat:9.0-jdk17-corretto"
+          value: "tomcat:9.0-jdk17-corretto"
+        - label: "tomcat:9.0-jdk11"
+          value: "tomcat:9.0-jdk11"
+        - label: "tomcat:9.0-jre11"
+          value: "tomcat:9.0-jre11"
+        - label: "tomcat:9.0-jdk11-temurin-focal"
+          value: "tomcat:9.0-jdk11-temurin-focal"
+        - label: "tomcat:9.0-jre11-temurin-focal"
+          value: "tomcat:9.0-jre11-temurin-focal"
+        - label: "tomcat:9.0-jdk11-corretto"
+          value: "tomcat:9.0-jdk11-corretto"
+        - label: "tomcat:9.0-jdk8"
+          value: "tomcat:9.0-jdk8"
+        - label: "tomcat:9.0-jre8"
+          value: "tomcat:9.0-jre8"
+        - label: "tomcat:9.0-jdk8-temurin-focal"
+          value: "tomcat:9.0-jdk8-temurin-focal"
+        - label: "tomcat:9.0-jre8-temurin-focal"
+          value: "tomcat:9.0-jre8-temurin-focal"
+        - label: "tomcat:9.0-jdk8-corretto"
+          value: "tomcat:9.0-jdk8-corretto"
+        - label: "tomcat:8.5"
+          value: "tomcat:8.5"
+        - label: "tomcat:8.5-jre21"
+          value: "tomcat:8.5-jre21"
+        - label: "tomcat:8.5-jdk21-corretto"
+          value: "tomcat:8.5-jdk21-corretto"
+        - label: "tomcat:8.5-jdk17"
+          value: "tomcat:8.5-jdk17"
+        - label: "tomcat:8.5-jre17"
+          value: "tomcat:8.5-jre17"
+        - label: "tomcat:8.5-jdk17-temurin-focal"
+          value: "tomcat:8.5-jdk17-temurin-focal"
+        - label: "tomcat:8.5-jre17-temurin-focal"
+          value: "tomcat:8.5-jre17-temurin-focal"
+        - label: "tomcat:8.5-jdk17-corretto"
+          value: "tomcat:8.5-jdk17-corretto"
+        - label: "tomcat:8.5-jdk11"
+          value: "tomcat:8.5-jdk11"
+        - label: "tomcat:8.5-jre11"
+          value: "tomcat:8.5-jre11"
+        - label: "tomcat:8.5-jdk11-temurin-focal"
+          value: "tomcat:8.5-jdk11-temurin-focal"
+        - label: "tomcat:8.5-jre11-temurin-focal"
+          value: "tomcat:8.5-jre11-temurin-focal"
+        - label: "tomcat:8.5-jdk11-corretto"
+          value: "tomcat:8.5-jdk11-corretto"
+        - label: "tomcat:8.5-jdk8"
+          value: "tomcat:8.5-jdk8"
+        - label: "tomcat:8.5-jre8"
+          value: "tomcat:8.5-jre8"
+        - label: "tomcat:8.5-jdk8-temurin-focal"
+          value: "tomcat:8.5-jdk8-temurin-focal"
+        - label: "tomcat:8.5-jre8-temurin-focal"
+          value: "tomcat:8.5-jre8-temurin-focal"
+        - label: "tomcat:8.5-jdk8-corretto"
+          value: "tomcat:8.5-jdk8-corretto"
+    - default: ./data
+      edit: true
+      envKey: TOMCAT_WEBAPPS_DIR
+      labelEn: Tomcat webapps 目录
+      labelZh: Tomcat webapps dir
+      required: true
+      type: text
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      required: true
+      rule: paramPort
+      type: number
