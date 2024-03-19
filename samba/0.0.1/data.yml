@@ -1,0 +1,9 @@
+additionalProperties:
+  formFields:
+    - default: ./data
+      edit: true
+      envKey: SAMBA_PATH
+      labelEn: samba path
+      labelZh: samba 保存路径
+      required: true
+      type: text
